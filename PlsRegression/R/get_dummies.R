@@ -1,14 +1,13 @@
 
-#' Add together two numbers
+#' Function Get Dummies
 #'
-#' @param x A number.
-#' @param y A number.
-#' @return A number.
+#' @param dataframe
+#'
+#' @return A dataframe of variables binarize
+#' @export
+#'
 #' @examples
-#' add(1, 1)
-#' add(10, 1)
-
-#get_dummies function
+#' get_dummies(Y)
 get_dummies = function(d){
   #verify if the package is installed
   res <- require(fastDummies)
@@ -27,3 +26,4 @@ get_dummies = function(d){
 
   return(d_dummies)
 }
+
