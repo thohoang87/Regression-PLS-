@@ -1,3 +1,13 @@
+
+#' Add together two numbers
+#'
+#' @param x A number.
+#' @param y A number.
+#' @return A number.
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+
 #get_dummies function
 get_dummies = function(d){
   #verify if the package is installed
@@ -14,6 +24,6 @@ get_dummies = function(d){
   d_dummies = fastDummies::dummy_cols(d)
   d_dummies = d_dummies[,-1]
   colnames(d_dummies) = levels(d)
-  
+
   return(d_dummies)
 }
