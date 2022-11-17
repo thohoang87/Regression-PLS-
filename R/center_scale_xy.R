@@ -1,4 +1,24 @@
+
 #scale function
+#' center_scale_xy
+#'
+#' @param x : dataframe
+#'
+#' Function return the scaled datafrme with the mean and sd.
+#' @param scale : a boolean
+#'
+#' @return
+#' mean : mean of dataframe x
+#' sd   : sd of dataframe x
+#' X    : the scaled dataframe
+#' @export
+#'
+#' @examples
+#' data(iris)
+#' x = iris[,1:4]
+#' center_scale_xy(x,scale = T)
+#'
+#'
 center_scale_xy =  function(x, scale = T){
   if (scale == T){
     mean = sapply(x, mean)
