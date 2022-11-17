@@ -103,7 +103,6 @@ SIMPLS = function(X,Y,n_components = ncomp){
 
     x_scores  = as.matrix(Xk)%*% as.matrix(x_weights)
     y_ss = 1
-    print(as.numeric(as.vector(x_scores)%*%as.vector(x_scores)))
     y_scores = (as.matrix(Yk)%*%as.matrix(y_weights)) / y_ss
     x_loadings = (as.vector(x_scores)%*%as.matrix(Xk)) / as.numeric((as.vector(x_scores)%*%as.vector(x_scores)))
 
@@ -115,9 +114,6 @@ SIMPLS = function(X,Y,n_components = ncomp){
     r2X <- 1 - (sum(apply(Xk,2,var))/ncol(Xk)) # R2 coefficients of X
     r2Y <- 1 - (sum(apply(Yk,2,var))/ncol(Yk)) # R2 coefficients of Y
     r2Var <- 1 - apply(Xk,2,var) # R2 coefficients of variables
-
-
-    nom <- paste("Comp.",k,sep = "")
 
     x_weights_[k,] = x_weights
     y_weights_[k,] = y_weights
