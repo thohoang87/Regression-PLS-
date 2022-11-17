@@ -2,7 +2,7 @@
 % Please edit documentation in R/fit.R
 \name{fit}
 \alias{fit}
-\title{Title}
+\title{Classification function}
 \usage{
 fit(
   formula,
@@ -17,8 +17,64 @@ fit(
 )
 }
 \arguments{
-\item{nfold}{}
+\item{formula}{an object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted}
+
+\item{data}{an optional data frame, list or environment (or object coercible by as.data.frame to a data frame) containing the variables in the model}
+
+\item{ncomp}{number of componants}
+
+\item{algorithm}{Choice algorithm between nipals and simpls}
+
+\item{var.select}{an boolean}
+
+\item{threshold.algorithm}{an numeric number}
+
+\item{threshold.vip}{an integer number}
+
+\item{iter.max}{an integer number}
+
+\item{nfold}{number of folder, initialise NULL
+
+Partial least squares regression (PLS regression) is a statistical method that bears some relation to principal components regression; instead of finding hyperplanes of maximum variance between the response and independent variables, it finds a linear regression model by projecting the predicted variables and the observable variables to a new space}
+}
+\value{
+X : an dataframe
+
+Y : an dataframe
+
+algorithm : algorithm nipals ou simpls
+
+n_components : number of componant
+
+Coefficients : coefficients of regression
+
+Intercept: intercept of regression
+
+x_weights : dataframe weights of X
+
+y_weights : dataframe weights of y
+
+Scores_X : dataframe scores of X
+
+Scores_Y : dataframe scores of X
+
+Loadings_X : dataframe loadings of X
+
+Loadings_Y : dataframe loadings of Y
+
+R2X : R square of X
+
+R2Y : R square of Y
+
+R2Var : R square of variables
+
+select_var : list of variable selected
 }
 \description{
-Title
+Classification function
+}
+\examples{
+data(iris)
+fit(Species~., iris, ncomp = 2, algorithm = "simpls")
+
 }

@@ -6,15 +6,52 @@
 #' @param ncomp    number of componants
 #' @param algorithm Choice algorithm between nipals and simpls
 #' @param var.select an boolean
-#' @param threshold.algorithm
-#' @param threshold.vip
-#' @param iter.max
-#' @param nfold
+#' @param threshold.algorithm an numeric number
+#' @param threshold.vip an integer number
+#' @param iter.max an integer number
+#' @param nfold number of folder, initialise NULL
+#'
+#'Partial least squares regression (PLS regression) is a statistical method that bears some relation to principal components regression; instead of finding hyperplanes of maximum variance between the response and independent variables, it finds a linear regression model by projecting the predicted variables and the observable variables to a new space
 #'
 #' @return
+#' X : an dataframe
+#'
+#' Y : an dataframe
+#'
+#' algorithm : algorithm nipals ou simpls
+#'
+#' n_components : number of componant
+#'
+#' Coefficients : coefficients of regression
+#'
+#' Intercept: intercept of regression
+#'
+#' x_weights : dataframe weights of X
+#'
+#' y_weights : dataframe weights of y
+#'
+#' Scores_X : dataframe scores of X
+#'
+#' Scores_Y : dataframe scores of X
+#'
+#' Loadings_X : dataframe loadings of X
+#'
+#' Loadings_Y : dataframe loadings of Y
+#'
+#' R2X : R square of X
+#'
+#' R2Y : R square of Y
+#'
+#' R2Var : R square of variables
+#'
+#' select_var : list of variable selected
+#'
 #' @export
 #'
 #' @examples
+#' data(iris)
+#' fit(Species~., iris, ncomp = 2, algorithm = "simpls")
+#'
 fit = function(formula, data, ncomp=NULL, algorithm="simpls",var.select = F,threshold.algorithm = 0.001, threshold.vip=1,iter.max = 100,nfold=NULL){
 
   #check dataframe
@@ -76,5 +113,3 @@ fit = function(formula, data, ncomp=NULL, algorithm="simpls",var.select = F,thre
   return(instance)
 
 }
-
-lm()

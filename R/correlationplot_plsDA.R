@@ -1,4 +1,19 @@
 # correlationplot function
+#' correlationplot_plsDA
+#'
+#' @param object An object of class Pls-DA
+#' @param usedcomp an integer for the number of componant
+#'
+#' A graphic to show correlation between variables
+#'
+#' @return
+#' correlation plot of variables
+#' @export
+#'
+#' @examples
+#' fit_launch : an object of class Pls-DA
+#' correlationplot_plsDA(fit_launch, usedcomp=1)
+#'
 correlationplot_plsDA <- function(object,usedcomp=1){
   #verify if the package is installed
   res <- require(corrplot)
@@ -10,7 +25,7 @@ correlationplot_plsDA <- function(object,usedcomp=1){
   if (res == FALSE){
     stop("Impossible to install the package")
   }
-  
+
   #verify the component selected
   if (is.null(usedcomp) || usedcomp < 1 || usedcomp >ncol(object$calc$x_weights)){
     #correlation standard
