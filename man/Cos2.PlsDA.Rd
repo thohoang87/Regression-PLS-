@@ -2,7 +2,7 @@
 % Please edit documentation in R/Cos2.PlsDA.R
 \name{Cos2.PlsDA}
 \alias{Cos2.PlsDA}
-\title{Cos2.PlsDA}
+\title{Cos2 graph}
 \usage{
 Cos2.PlsDA(object)
 }
@@ -13,7 +13,7 @@ Cos2.PlsDA(object)
 Cos2 : quality representation of variables
 }
 \description{
-Cos2.PlsDA
+Cos2 graph
 }
 \examples{
 fit_launch : An object of class Pls-DA

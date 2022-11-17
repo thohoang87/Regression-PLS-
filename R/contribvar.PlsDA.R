@@ -1,7 +1,7 @@
 #Variables contribution
-#' contribvar.PlsDA
+#' Plot contribution variable
 #'
-#' return a graph of contribution variables
+#' return a graph of contribution variables.
 #'
 #' @param object An object of class Pls-DA
 #'

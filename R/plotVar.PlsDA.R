@@ -1,5 +1,5 @@
 #correlation circle of variables
-#' plotVar.PlsDA
+#' Variables plot
 #'
 #'Create a correlation circle with coordinate of variables.
 #'

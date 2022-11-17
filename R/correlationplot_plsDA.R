@@ -1,5 +1,5 @@
 # correlationplot function
-#' correlationplot_plsDA
+#' Correlation plot
 #'
 #' @param object An object of class Pls-DA
 #' @param usedcomp an integer for the number of componant

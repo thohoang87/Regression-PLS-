@@ -1,4 +1,4 @@
-#' plotInd.PlsDA
+#' Individu plot
 #'
 #' Create the individu plot on plan with two componants.
 #'

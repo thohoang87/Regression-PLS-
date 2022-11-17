@@ -1,5 +1,5 @@
 #quality of representativity of variable
-#' Cos2.PlsDA
+#' Cos2 graph
 #'
 #' @param object An object of class Pls-DA
 #'

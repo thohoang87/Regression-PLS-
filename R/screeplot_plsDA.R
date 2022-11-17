@@ -1,5 +1,5 @@
 # screeplot function
-#' screeplot_plsDA
+#' Screeplot
 #'
 #' @param object  : An object of class Pls-DA
 #' @param barfill : color barplot

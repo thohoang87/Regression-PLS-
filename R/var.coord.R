@@ -1,5 +1,5 @@
 #function create coord of variables
-#' var.coord
+#' Coordonates variables
 #'
 #' @param object An object of class Pls-DA
 #'
