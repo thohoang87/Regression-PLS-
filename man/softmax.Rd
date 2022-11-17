@@ -2,7 +2,7 @@
 % Please edit documentation in R/softmax.R
 \name{softmax}
 \alias{softmax}
-\title{Softmax
+\title{Softmax function
 Function to calcul the probabilities and after determine the class of individu with the Sofmax method}
 \usage{
 softmax(newdata, object)
@@ -17,7 +17,7 @@ Clusters : class of inidividu
 Probability : probabilities to belong at a class
 }
 \description{
-Softmax
+Softmax function
 Function to calcul the probabilities and after determine the class of individu with the Sofmax method
 }
 \examples{

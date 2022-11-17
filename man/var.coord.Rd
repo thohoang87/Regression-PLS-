@@ -2,7 +2,7 @@
 % Please edit documentation in R/var.coord.R
 \name{var.coord}
 \alias{var.coord}
-\title{var.coord}
+\title{Coordonates variables}
 \usage{
 var.coord(object)
 }
@@ -13,7 +13,7 @@ var.coord(object)
 var.coord : coordinates of variables
 }
 \description{
-var.coord
+Coordonates variables
 }
 \examples{
 fit_launch : an object of class Pls-DA

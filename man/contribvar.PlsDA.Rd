@@ -2,7 +2,7 @@
 % Please edit documentation in R/contribvar.PlsDA.R
 \name{contribvar.PlsDA}
 \alias{contribvar.PlsDA}
-\title{contribvar.PlsDA}
+\title{Plot contribution variable}
 \usage{
 contribvar.PlsDA(object)
 }
@@ -13,7 +13,7 @@ contribvar.PlsDA(object)
 corrplot of contribution variables
 }
 \description{
-return a graph of contribution variables
+return a graph of contribution variables.
 }
 \examples{
 fit_launch : An object of class Pls-DA

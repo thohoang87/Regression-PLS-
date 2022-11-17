@@ -2,7 +2,7 @@
 % Please edit documentation in R/screeplot_plsDA.R
 \name{screeplot_plsDA}
 \alias{screeplot_plsDA}
-\title{screeplot_plsDA}
+\title{Screeplot}
 \usage{
 screeplot_plsDA(object, barfill = "steelblue", linecolor = "black")
 }
@@ -17,7 +17,7 @@ screeplot_plsDA(object, barfill = "steelblue", linecolor = "black")
 PVEplot : a screeplot to determinded the number of componants with the criteria of elbow method
 }
 \description{
-screeplot_plsDA
+Screeplot
 }
 \examples{
 fit_launche : An object of class Pls-DA

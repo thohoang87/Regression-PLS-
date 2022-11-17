@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotInd.PlsDA.R
 \name{plotInd.PlsDA}
 \alias{plotInd.PlsDA}
-\title{plotInd.PlsDA}
+\title{Individu plot}
 \usage{
 plotInd.PlsDA(object, comp1 = 1, comp2 = 2, ellipse = TRUE, labels = TRUE)
 }

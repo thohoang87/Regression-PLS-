@@ -2,7 +2,7 @@
 % Please edit documentation in R/correlationplot_plsDA.R
 \name{correlationplot_plsDA}
 \alias{correlationplot_plsDA}
-\title{correlationplot_plsDA}
+\title{Correlation plot}
 \usage{
 correlationplot_plsDA(object, usedcomp = 1)
 }
@@ -17,7 +17,7 @@ A graphic to show correlation between variables}
 correlation plot of variables
 }
 \description{
-correlationplot_plsDA
+Correlation plot
 }
 \examples{
 fit_launch : an object of class Pls-DA
