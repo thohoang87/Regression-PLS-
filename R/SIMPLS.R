@@ -160,16 +160,3 @@ SIMPLS = function(X,Y,n_components = ncomp){
 
 }
 
-
-library(devtools)
-install_github("Samibgh/Regression-PLS-",force = T)
-library(PlsRegression)
-
-data(iris)
-X = iris[,1:4]
-Y =iris[,5]
-Y = get_dummies(Y)
-
-PlsRegression::fit(Species~.,data = iris,algorithm="simpls")
-
-SIMPLS(X,Y,2)
