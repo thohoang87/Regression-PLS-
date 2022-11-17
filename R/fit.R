@@ -40,6 +40,8 @@ fit = function(formula, data, ncomp=NULL, algorithm="simpls",var.select = F,thre
   else if(algorithm == "simpls"){
     temp = SIMPLS(X=X,Y=Yclass,n_components=ncomp)
   }
+  else{
+    stop("choose algorithm between nipals and simpls")}
   
   # check variables selection:
   if (var.select ==TRUE) {
