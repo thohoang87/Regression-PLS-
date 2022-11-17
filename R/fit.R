@@ -37,7 +37,7 @@ fit = function(formula, data, ncomp=NULL, algorithm="simpls",var.select = F,thre
   if (algorithm == "nipals"){
     temp = NIPALS(X=X,Y=Yclass,ncomp=ncomp,threshold=threshold.algorithm,iter.max=iter.max)
   }
-  else {
+  else if(algorithm == "simpls"){
     temp = SIMPLS(X=X,Y=Yclass,n_components=ncomp)
   }
   
