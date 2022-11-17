@@ -159,3 +159,17 @@ SIMPLS = function(X,Y,n_components = ncomp){
   return(list("X" = X,"Y" = Y,"classification" = classification,"Coefficients" = coef_, "Intercept" = Intercept,"x_weights"= x_weights_,"y_weights" = y_weights_,"Scores_X"= x_scores_, "Scores_Y" = y_scores_, "Loadings_X" = x_loadings_, "Loadings_Y" = y_loadings_,"R2X"=res_r2X, "R2Y"=res_r2Y,"R2Var" = res_r2Var))
 
 }
+
+
+library(devtools)
+install_github("Samibgh/Regression-PLS-",force = T)
+library(PlsRegression)
+
+data(iris)
+X = iris[,1:4]
+Y =iris[,5]
+Y = get_dummies(Y)
+
+PlsRegression::fit(Species~.,data = iris,algorithm="simpls")
+
+SIMPLS(X,Y,2)
