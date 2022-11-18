@@ -14,7 +14,7 @@
 #' fit_launch : An object of class Pls-DA
 #' contribvar.PlsDA(fit_launch)
 #'
-contribvar.PlsDA = function(object){
+PlsDA.contribvar = function(object){
 
   #verify if the package is installed
   res <- require(corrplot)

@@ -1,5 +1,5 @@
 # fonction PlsDA.vip
-PlsDAvip = function(X,Y,ncomp,threshold = 1,algorithm="simpls" ){
+PlsDA.vip = function(X,Y,ncomp,threshold = 1,algorithm="simpls" ){
 
 
   # On vérifie l'algorithme utilisé
