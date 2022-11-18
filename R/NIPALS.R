@@ -1,16 +1,49 @@
 #Function with NIPALS's algorithm
-#' Title
+
+#'NIPALS algorithm
 #'
-#' @param X
-#' @param Y
-#' @param ncomp
-#' @param threshold
-#' @param iter.max
+#'This function includes PLS1 and PLS2 algorithm, that is used for the fit function in the PLS-DA regression model.
 #'
+#' @param X the numeric data frame or matrix of observations. Missing values are not allowed.
+#' @param Y the numeric data frame or matrix of responses. Missing values are not allowed.
+#' @param ncomp the number of components to be used in the modelling. Default to NULL.
+#' @param threshold the threshold used in NIPALS algorithm. Ignored otherwise. Default to 0.001.
+#' @param iter.max the maximum number of iterations of the power method.
+#'
+#' @details This function includes both PLS1 and PLS2 algorithm, but Y must be a numeric data frame or matrix that contains 1 or many columns.
 #' @return
+#'X :  the original numeric data frame or matrix of observations.
+#'
+#'Y	:  the original numeric data frame or matrix of responses.
+#'
+#'n_components :	  the number of components.
+#'
+#'Coefficients :	  the coefficients of the linear model.
+#'
+#'Intercept :	      the intercepts of the linear model such that Y is approximated as Y = X @ Coefficients + Intercept.
+#'
+#'x_weights	:      the cross-covariance matrix of each iteration of X.
+#'
+#'Loadings_X :	    the loadings of X.
+#'
+#'Scores_X :      the scores of X.
+#'
+#'y_weights	:      the cross-covariance matrix of each iteration of Y.
+#'
+#'Loadings_Y :	    the loadings of Y.
+#'
+#'Scores_Y	:      the scores of Y.
+#'
+#'R2X	:            explained variance of X.
+#'
+#'R2Y	:            explained variance of Y.
+
 #' @export
 #'
 #' @examples
+#' data(mtcars)
+#' NIPALS(X=mtcars[,1:10], Y=dataframe(mtcars[,11]), ncomp=10)
+#'
 NIPALS <- function(X,Y, ncomp = NULL, threshold = 0.001, iter.max = 100){
   # verify data: dataframe or matrix
   ok <- (is.data.frame(X) | is.matrix(X)) & (is.data.frame(Y) | is.matrix(Y))
@@ -140,3 +173,4 @@ NIPALS <- function(X,Y, ncomp = NULL, threshold = 0.001, iter.max = 100){
               R2Y=res_r2Y,
               R2Var=res_r2Var))
 } # end of function NIPALS
+
