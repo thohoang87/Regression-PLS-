@@ -1,6 +1,10 @@
 #Function with SIMPLS's algorithm
 #' SIMPLS algorithm
 #'
+#' @description
+#' This function include simpls algorithm for pls regression.
+#' Y must numeric
+#'
 #' @param X variables features
 #' @param Y variable to explain
 #' @param n_components number of composants

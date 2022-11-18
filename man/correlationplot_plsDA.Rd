@@ -9,15 +9,13 @@ correlationplot_plsDA(object, usedcomp = 1)
 \arguments{
 \item{object}{An object of class Pls-DA}
 
-\item{usedcomp}{an integer for the number of componant
-
-A graphic to show correlation between variables}
+\item{usedcomp}{an integer for the number of componant}
 }
 \value{
 correlation plot of variables
 }
 \description{
-Correlation plot
+A graphic to show correlation between variables
 }
 \examples{
 fit_launch : an object of class Pls-DA

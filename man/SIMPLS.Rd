@@ -43,7 +43,8 @@ R2Y : R square of Y
 R2Var : R square of variables
 }
 \description{
-SIMPLS algorithm
+This function include simpls algorithm for pls regression.
+Y must numeric
 }
 \examples{
 data(iris)

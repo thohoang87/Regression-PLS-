@@ -1,10 +1,10 @@
 # correlationplot function
 #' Correlation plot
 #'
+#' A graphic to show correlation between variables
+#'
 #' @param object An object of class Pls-DA
 #' @param usedcomp an integer for the number of componant
-#'
-#' A graphic to show correlation between variables
 #'
 #' @return
 #' correlation plot of variables
