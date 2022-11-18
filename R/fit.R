@@ -96,7 +96,7 @@ fit = function(formula, data, ncomp=NULL, algorithm="simpls",var.select = F,thre
 
   # check variables selection:
   if (var.select ==TRUE) {
-    select_var <- PlsDA.vip(X=X,Y=Yclass, ncomp=ncomp,algorithm=algorithm,threshold=threshold.vip)
+    select_var <- PlsDAvip(X=X,Y=Yclass, ncomp=ncomp,algorithm=algorithm,threshold=threshold.vip)
   } else {
     select_var <- NULL
   }
