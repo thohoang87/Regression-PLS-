@@ -13,7 +13,7 @@
 #' fit_launche : An object of class Pls-DA
 #' screeplot_plsDA(object,barfill="steelblue",linecolor = "black")
 #'
-PlsDA.screeplot = function(object,barfill="steelblue",linecolor = "black"){
+screeplot_plsDA = function(object,barfill="steelblue",linecolor = "black"){
   #verify if the package is installed
   res <- require(ggplot2) && require(ggpubr)
   if (res == FALSE){
@@ -51,3 +51,7 @@ PlsDA.screeplot = function(object,barfill="steelblue",linecolor = "black"){
 
   return(ggpubr::ggpar(PVEplot))
 }
+
+
+
+

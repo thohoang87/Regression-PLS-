@@ -14,7 +14,7 @@
 #' fit_launch : an object of class Pls-DA
 #' correlationplot_plsDA(fit_launch, usedcomp=1)
 #'
-PlsDA.correlationplot <- function(object,usedcomp=1){
+correlationplot_plsDA <- function(object,usedcomp=1){
   #verify if the package is installed
   res <- require(corrplot)
   if (res == FALSE){

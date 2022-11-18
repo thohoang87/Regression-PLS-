@@ -19,7 +19,7 @@
 #' center_scale_xy(x,scale = T)
 #'
 #'
-PlsDA.center_scale_xy =  function(x, scale = T){
+center_scale_xy =  function(x, scale = T){
   if (scale == T){
     mean = sapply(x, mean)
     sd = sapply(x,sd)
