@@ -1,4 +1,12 @@
 #surcharge de summary
+#' Title
+#'
+#' @param object
+#'
+#' @return
+#' @export
+#'
+#' @examples
 summary.plsDA <- function(object){
   cat("PLSDA fitted with the ",object$algorithm, "algorithm","\n")
   cat("Number of components : ",object$n_components,"\n")
