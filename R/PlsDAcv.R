@@ -1,4 +1,35 @@
-#Fonction Validation Croissée PlsDA.cv
+
+#' Cross-validation of PLSDA model
+#'
+#' A “leave-one-out” cross-validation function used in fit.
+#'
+#' @param X the numeric data frame or matrix of observations. Missing values are not allowed.
+#' @param Y a vector or matrix of responses. Missing values are not allowed.
+#' @param threshold the threshold used in NIPALS algorithm. Default to 0.001.
+#' @param nfold the number of folds used in cross validation. Default to NULL. If nfold is missing, the number of folds is the minimum of rows’ or columns’ number of data.
+#' @details
+#'This function performs a “leave-one-out” cross-validation based on NIPALS algorithm on a model fit. When ncomp = NULL, the number of components is obtained by cross-validation. When a number of components is specified, cross-validation results are calculated for each component.
+#'
+#'Leave-one-out cross-validation uses the following approach to evaluate a model:
+#'
+#'- Split a dataset into a training set and a test set, using all but one observation as part of the training set (we only leave one observation out from the training set).
+#'
+#'- Build the model using only data from the training set.
+#'
+#'- Use the model to predict the response value of the one observation left out of the model and calculate Q2 coefficient.
+#'
+#'- Repeat the process nfold times.
+
+#'
+#' @return
+#'Q2 :	the coefficient of “leave-one-out” cross-validation. If Q2 >= 0.05, we take the component.
+#'
+#'ncomp	: the number of components obtained by “leave-one-out” cross-validation.
+#' @export
+#' @examples
+#' data(iris)
+#' PlsDA.cv(iris[,1:4], iris[,5])
+#'
 PlsDA.cv <- function(X,Y, threshold = 0.001, nfold=NULL){
   # verify data: dataframe or matrix
   ok <- (is.data.frame(X) | is.matrix(X)) & (is.data.frame(Y) | is.matrix(Y))
@@ -45,7 +76,7 @@ PlsDA.cv <- function(X,Y, threshold = 0.001, nfold=NULL){
       wh <- (t(uh) %*% Xscale)/as.numeric(t(uh) %*% uh) # x-weights
       wh <- t(wh/sqrt(as.numeric(wh %*% t(wh))))        # normalisation
       th <- Xscale %*% wh                             # X_scores
-      ch <- t((t(th) %*% Yscale)/as.numeric(t(th) %*% th)) # Y_loadings
+      ch <- t((t(th) %*% Yscale)/as.numeric(t(th) %*% th)) # loadings of Y
       uh <- Yscale %*% ch/as.numeric(t(ch) %*% ch)   # Y_scores
 
       # verify if wh changes or not:
@@ -57,7 +88,7 @@ PlsDA.cv <- function(X,Y, threshold = 0.001, nfold=NULL){
       iter <- iter + 1
     } # end of loop while RSS
 
-    ph <- t(t(th) %*% Xscale/(as.numeric(t(th) %*% th)))  # X_loadings
+    ph <- t(t(th) %*% Xscale/(as.numeric(t(th) %*% th)))  # X_loadings  &
 
     #calculate RSS:
     RSS[h+1,] <-  colSums((Yscale - (th %*% t(ch)))^2)
@@ -114,4 +145,7 @@ PlsDA.cv <- function(X,Y, threshold = 0.001, nfold=NULL){
   ncomp <- length(selcom)
 
   return(list(Q2=Q2T,ncomp=ncomp))
-} #end of PlsDA.cv function
+} #end function
+
+
+
