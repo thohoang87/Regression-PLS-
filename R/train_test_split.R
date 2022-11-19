@@ -25,9 +25,9 @@ train_test_split = function(dataframe){
   }
 
   #Split dataset
-  sample <- sample(c(TRUE, FALSE), nrow(dataframe), replace=TRUE, prob=c(0.7,0.3))
-  train  <- dataframe[sample, ]
-  test   <- dataframe[!sample, ]
+  sample <- sample(c(TRUE, FALSE), nrow(iris), replace=TRUE, prob=c(0.7,0.3))
+  train  <- iris[sample, ]
+  test   <- iris[!sample, ]
 
-  return(list("Dataframe" : dataframe, "Df_Train" : train, "Df_Test" : test))
+  return(list("Dataframe" = dataframe, "Df_Train" = train, "Df_Test" = test))
 }
