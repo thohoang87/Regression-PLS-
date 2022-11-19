@@ -13,7 +13,7 @@ var.coord(object)
 var.coord : coordinates of variables
 }
 \description{
-Coordonates variables
+Create coordonate of variables.
 }
 \examples{
 fit_launch : an object of class Pls-DA

@@ -1,5 +1,5 @@
 #correlation circle of variables
-#' Variables plot
+#' Circle correlation plot
 #'
 #'Create a correlation circle with coordinate of variables.
 #'

@@ -1,12 +1,18 @@
 #surcharge de summary
-#' Title
+#' summary.plsDA
 #'
-#' @param object
+#' Print the summary of results of PLS DA package.
+#'
+#' @param object An object of class Pls-DA
 #'
 #' @return
+#' Print summary of results for the algorithms nipals and simpls.
 #' @export
 #'
 #' @examples
+#' fit_launch : an object of class Pls-DA
+#' summary.plsDA(fit_launch)
+#'
 summary.plsDA <- function(object){
   cat("PLSDA fitted with the ",object$algorithm, "algorithm","\n")
   cat("Number of components : ",object$n_components,"\n")

@@ -2,8 +2,7 @@
 % Please edit documentation in R/predict.R
 \name{predict}
 \alias{predict}
-\title{Prediction features
-Function who atribute  class for individu with softmax method on the new new dataframe.}
+\title{Prediction features}
 \usage{
 predict(object, newdata, type = c("posterior", "class"))
 }
@@ -19,7 +18,6 @@ Class : clusters of individu
 Probability : The Probability to for the individu to go in the different class
 }
 \description{
-Prediction features
 Function who atribute  class for individu with softmax method on the new new dataframe.
 }
 \examples{

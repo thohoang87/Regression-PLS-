@@ -1,4 +1,31 @@
 # fonction PlsDA.vip
+#' PlsDA.vip
+#'
+#' @param X a dataframe with features
+#' @param Y a dataframe with variable to explain
+#' @param ncomp a integer
+#' @param threshold a integer
+#' @param algorithm Type of algorithm to choose for selection
+#'
+#' @return
+#' VIP : A dataframe
+#'
+#' newX : A new dataframe with features choose
+#'
+#' important.variables : list of important variables
+#'
+#' threshold : An integer
+#'
+#' ncomp : An integer, number of componants
+#' @export
+#'
+#' @examples
+#' data(iris)
+#' Y = iris[,5]
+#' X = iris[,1:4]
+#' PlsDA.vip(X, Y, ncomp = 2,algorithm="simpls")
+#'
+#'
 PlsDA.vip = function(X,Y,ncomp,threshold = 1,algorithm="simpls" ){
 
 

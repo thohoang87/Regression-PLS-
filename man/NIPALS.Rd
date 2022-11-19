@@ -2,13 +2,56 @@
 % Please edit documentation in R/NIPALS.R
 \name{NIPALS}
 \alias{NIPALS}
-\title{Title}
+\title{NIPALS algorithm}
 \usage{
 NIPALS(X, Y, ncomp = NULL, threshold = 0.001, iter.max = 100)
 }
 \arguments{
-\item{iter.max}{}
+\item{X}{the numeric data frame or matrix of observations. Missing values are not allowed.}
+
+\item{Y}{the numeric data frame or matrix of responses. Missing values are not allowed.}
+
+\item{ncomp}{the number of components to be used in the modelling. Default to NULL.}
+
+\item{threshold}{the threshold used in NIPALS algorithm. Ignored otherwise. Default to 0.001.}
+
+\item{iter.max}{the maximum number of iterations of the power method.}
+}
+\value{
+X :  the original numeric data frame or matrix of observations.
+
+Y	:  the original numeric data frame or matrix of responses.
+
+n_components :	  the number of components.
+
+Coefficients :	  the coefficients of the linear model.
+
+Intercept :	      the intercepts of the linear model such that Y is approximated as Y = X @ Coefficients + Intercept.
+
+x_weights	:      the cross-covariance matrix of each iteration of X.
+
+Loadings_X :	    the loadings of X.
+
+Scores_X :      the scores of X.
+
+y_weights	:      the cross-covariance matrix of each iteration of Y.
+
+Loadings_Y :	    the loadings of Y.
+
+Scores_Y	:      the scores of Y.
+
+R2X	:            explained variance of X.
+
+R2Y	:            explained variance of Y.
 }
 \description{
-Title
+This function includes PLS1 and PLS2 algorithm, that is used for the fit function in the PLS-DA regression model.
+}
+\details{
+This function includes both PLS1 and PLS2 algorithm, but Y must be a numeric data frame or matrix that contains 1 or many columns.
+}
+\examples{
+data(mtcars)
+NIPALS(X=mtcars[,1:10], Y=dataframe(mtcars[,11]), ncomp=10)
+
 }

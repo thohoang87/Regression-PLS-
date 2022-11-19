@@ -1,6 +1,8 @@
 #function create coord of variables
 #' Coordonates variables
 #'
+#' Create coordonate of variables.
+#'
 #' @param object An object of class Pls-DA
 #'
 #' @return

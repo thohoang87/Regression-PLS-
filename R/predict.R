@@ -1,5 +1,6 @@
 #predict function
 #' Prediction features
+#'
 #' Function who atribute  class for individu with softmax method on the new new dataframe.
 #'
 #' @param object An object of class Pls-DA

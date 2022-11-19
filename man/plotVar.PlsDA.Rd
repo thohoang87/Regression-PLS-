@@ -2,7 +2,7 @@
 % Please edit documentation in R/plotVar.PlsDA.R
 \name{plotVar.PlsDA}
 \alias{plotVar.PlsDA}
-\title{Variables plot}
+\title{Circle correlation plot}
 \usage{
 plotVar.PlsDA(object, comp1 = 1, comp2 = 2)
 }

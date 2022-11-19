@@ -1,5 +1,6 @@
 # softmax function
 #' Softmax function
+#'
 #' Function to calcul the probabilities and after determine the class of individu with the Sofmax method
 #'
 #' @param newdata New dataframe

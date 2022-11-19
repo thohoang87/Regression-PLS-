@@ -33,9 +33,7 @@ fit(
 
 \item{iter.max}{an integer number}
 
-\item{nfold}{number of folder, initialise NULL
-
-Partial least squares regression (PLS regression) is a statistical method that bears some relation to principal components regression; instead of finding hyperplanes of maximum variance between the response and independent variables, it finds a linear regression model by projecting the predicted variables and the observable variables to a new space}
+\item{nfold}{number of folder, initialise NULL}
 }
 \value{
 X : an dataframe
@@ -71,7 +69,8 @@ R2Var : R square of variables
 select_var : list of variable selected
 }
 \description{
-Classification function
+Function fit for instance class PLS-DA and to keep result of functions into the instance.
+Partial least squares regression (PLS regression) is a statistical method that bears some relation to principal components regression; instead of finding hyperplanes of maximum variance between the response and independent variables, it finds a linear regression model by projecting the predicted variables and the observable variables to a new space.
 }
 \examples{
 data(iris)
