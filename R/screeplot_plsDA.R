@@ -33,7 +33,7 @@ screeplot_plsDA = function(object,barfill="steelblue",linecolor = "black"){
   arrests.eigen <- eigen(arrests.cov)
 
   PVE <- arrests.eigen$values / sum(arrests.eigen$values)
-  data.plot <- cbind.data.frame(c(1:fit_launch$n_components), PVE)
+  data.plot <- cbind.data.frame(c(1:object$n_components), PVE)
   colnames(data.plot) <- c("Components","PVE")
 
   data.plot<-data.plot %>% group_by(Components)%>%
