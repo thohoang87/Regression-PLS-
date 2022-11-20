@@ -6,7 +6,7 @@
 #'
 #' @return
 #'
-#' classement : A dataframe
+#' classification : A dataframe
 #'
 #' @export
 #'
