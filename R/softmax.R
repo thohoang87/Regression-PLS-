@@ -25,7 +25,7 @@ softmax <- function(newdata,object){
   # softmax probability
   res <- t(apply(yhat,1,exp))
   somme <- rowSums(res)
-  result <- t(res/somme)
+  result <- res/somme
 
   # classification
   class <- max.col(result)
