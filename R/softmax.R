@@ -23,8 +23,8 @@ softmax <- function(newdata,object){
   yhat <- as.matrix(newdata)%*%object$calc$Coefficients + temp
 
   # softmax probability
-  res <- apply(yhat,1,exp)
-  somme <- colSums(res)
+  res <- t(apply(yhat,1,exp))
+  somme <- rowSums(res)
   result <- t(res/somme)
 
   # classification
