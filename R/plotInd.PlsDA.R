@@ -18,10 +18,10 @@ plotInd.PlsDA = function(object, comp1 = 1, comp2 = 2){
 
 
   #verify if the package is installed
-  res <- require(ggplot2)
+  res <- require(plotly)
   if (res == FALSE){
-    install.packages("ggplot2")
-    res <- require(ggplot2)
+    install.packages("plotly")
+    res <- require(plotly)
   }
 
   scaled_df <- apply(object$X, 2, scale)
@@ -53,3 +53,5 @@ plotInd.PlsDA = function(object, comp1 = 1, comp2 = 2){
     )
   return(fig)
 }
+
+

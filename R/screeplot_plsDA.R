@@ -16,7 +16,7 @@
 #'
 screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 'black'){
   #verify if the package is installed
-  res <- require(ggplot2) && require(ggpubr)
+  res <- require(plotly) && require(ggpubr)
   if (res == FALSE){
     install.packages("plotly")
     install.packages("ggpubr")
