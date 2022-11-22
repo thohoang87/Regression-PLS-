@@ -48,8 +48,6 @@ contribvar.PlsDA = function(object){
   for (k in 1:object$n_components){
     ctrvar[,k] = ctrvar[,k]/values[k]
   }
-  print(ctrvar)
 
   return(corrplot::corrplot(ctrvar,is.corr = F,col=brewer.pal(n=8, name="RdBu")))
 }
-

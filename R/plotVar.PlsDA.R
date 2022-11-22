@@ -19,33 +19,46 @@ plotVar.PlsDA = function(object, comp1 = 1, comp2 = 2){
   #plotting variables
   #package ggplot2
 
-
   #verify if the package is installed
-  res <- require("ggplot2")
+  res <- require("plotly")
   if (res == FALSE){
-    install.packages("ggplot2")
-    res <- require("ggplot2")
+    install.packages("plotly")
+    res <- require("plotly")
   }
+
+  scaled_df <- apply(object$X, 2, scale)
+
+  arrests.cov <- cov(scaled_df)
+  arrests.eigen <- eigen(arrests.cov)
+
+  PVE <- round(arrests.eigen$values / sum(arrests.eigen$values),2) *100
 
   var.coord = var.coord(object)
 
-  dat <- circleFun(c(0,0),2,npoints = 100)
+  d  = cbind(var.coord[,1],var.coord[,2])
 
-  d  = cbind(var.coord[,comp1],var.coord[,comp2])
-  #geom_path will do open circles, geom_polygon will do filled circles
-  p = ggplot(dat, aes(x,y)) + geom_path(size = 1)
-  for (i in 1: nrow(d)){
-    p = p + geom_segment(x = 0 ,y = 0, xend = d[i,comp1], yend = d[i,comp2],size = 1.0,
-                         arrow = arrow(length = unit(0.5, "cm"))) +
-      geom_text(x = d[i,comp1], y = d[i,comp2],
-                label=rownames(object$calc$Loadings_X)[i], color = "blue", size  = 4.5,
-                vjust = -1)
-  }
-  p  = p + geom_hline(yintercept = 0, alpha = 0.4,linetype = "longdash") +
-    geom_vline(xintercept = 0, alpha = 0.4,linetype = "longdash") +
-    theme(aspect.ratio = 1) + coord_cartesian(clip = "off") +
-    xlab(paste0("Comp ", comp1)) +
-    ylab(paste0("Comp ", comp2))
+  layout <- list(
+    title = "Correlation circle",
+    xaxis = list(title = paste("Axis 1 (", round(PVE[comp1], 1), "%)", sep = "")),
+    yaxis = list(title = paste("Axis 2 (", round(PVE[comp2], 1), "%)", sep = "")),
+    width = 600,
+    shapes = list(
+      list(
+        x0 = -1,
+        x1 = 1,
+        y0 = -1,
+        y1 = 1,
+        type = "circle"
+      )
+    )
+  )
+  p <- plot_ly()
+
+  p <- add_trace(p,type = 'scatter', mode="markers",name = rownames(object$calc$Loadings_X),type = 'scatter', x=var.coord[,comp1], y=var.coord[,comp2])
+  p <- layout(p, title=layout$title, width=layout$width, xaxis=layout$xaxis, yaxis=layout$yaxis, shapes=layout$shapes)
+
+
 
   return(p)
 }
+
