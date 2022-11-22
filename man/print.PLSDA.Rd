@@ -10,7 +10,7 @@
 \item{objet}{An object of class Pls-DA}
 }
 \value{
-classement : A dataframe
+classification : A dataframe
 }
 \description{
 A function who is surchage by the class Pls-DA to print the classification function.

@@ -4,14 +4,21 @@
 \alias{screeplot_plsDA}
 \title{Screeplot}
 \usage{
-screeplot_plsDA(object, barfill = "steelblue", linecolor = "black")
+screeplot_plsDA(
+  object,
+  colorbar = NULL,
+  linecolor = "black",
+  marcker = "black"
+)
 }
 \arguments{
 \item{object}{: An object of class Pls-DA}
 
-\item{barfill}{: color barplot}
+\item{linecolor}{: colorline}
 
-\item{linecolor}{: color line}
+\item{marcker}{: color point line}
+
+\item{cololbar}{: color of barplot}
 }
 \value{
 PVEplot : a screeplot to determinded the number of componants with the criteria of elbow method
