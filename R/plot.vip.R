@@ -2,7 +2,7 @@
 
 #' Plot VIP
 #'
-#' @param ObjectVIP An object of class Pls-DA
+#' @param ObjectVIP An object of class
 #'
 #' @return
 #' A plot VIP to select variable in the modele
@@ -10,8 +10,8 @@
 #' @export
 #'
 #' @examples
-#' fit_launch : An object of class Pls-DA
-#' plot.vip(fit_launch)
+#' vip = PlsDA.vip(X,Y,2)
+#' plot.vip(vip)
 #'
 plot.vip<-function(ObjectVIP){
 
@@ -28,5 +28,3 @@ plot.vip<-function(ObjectVIP){
   }
   abline(h=ObjectVIP$threshold,col="red")
 }
-
-

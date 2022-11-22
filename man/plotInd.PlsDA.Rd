@@ -4,7 +4,7 @@
 \alias{plotInd.PlsDA}
 \title{Individu plot}
 \usage{
-plotInd.PlsDA(object, comp1 = 1, comp2 = 2, ellipse = TRUE, labels = TRUE)
+plotInd.PlsDA(object, comp1 = 1, comp2 = 2)
 }
 \arguments{
 \item{object}{An object of class Pls-DA}
@@ -12,10 +12,6 @@ plotInd.PlsDA(object, comp1 = 1, comp2 = 2, ellipse = TRUE, labels = TRUE)
 \item{comp1}{choose the first componant}
 
 \item{comp2}{choose the second componant}
-
-\item{ellipse}{an boolean to show the group of different level of the explain variable}
-
-\item{labels}{Show the labels of individu}
 }
 \value{
 p : Plot of individu
@@ -25,6 +21,6 @@ Create the individu plot on plan with two componants.
 }
 \examples{
 fit_launch : an object of class Pls-DA
-plotInd.PlsDA(fit_launch, comp1 = 1, comp2 = 2, ellipse = T)
+plotInd.PlsDA(fit_launch, comp1 = 1, comp2 = 2)
 
 }
