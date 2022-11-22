@@ -7,7 +7,7 @@
 \method{plot}{vip}(ObjectVIP)
 }
 \arguments{
-\item{ObjectVIP}{An object of class Pls-DA}
+\item{ObjectVIP}{An object of class}
 }
 \value{
 A plot VIP to select variable in the modele
@@ -16,7 +16,7 @@ A plot VIP to select variable in the modele
 Plot VIP
 }
 \examples{
-fit_launch : An object of class Pls-DA
-plot.vip(fit_launch)
+vip = PlsDA.vip(X,Y,2)
+plot.vip(vip)
 
 }
