@@ -13,7 +13,7 @@
 #' fit_launch : an object of class Pls-DA
 #' summary.plsDA(fit_launch)
 #'
-summary.plsDA <- function(object){
+summary.PLSDA <- function(object){
   cat("PLSDA fitted with the ",object$algorithm, "algorithm","\n")
   cat("Number of components : ",object$n_components,"\n")
   cat("-----------------------------------------------","\n")

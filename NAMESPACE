@@ -2,7 +2,7 @@
 
 export(plot.vip)
 S3method(print,PLSDA)
-S3method(summary,plsDA)
+S3method(summary,PLSDA)
 export(Cos2.PlsDA)
 export(NIPALS)
 export(PlsDA.cv)
