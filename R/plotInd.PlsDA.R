@@ -35,23 +35,22 @@ plotInd.PlsDA = function(object, comp1 = 1, comp2 = 2){
   dcoord = cbind(dcoord,object$Y)
   colnames(dcoord) = c(paste("Comp",1:object$n_components,sep = ""),"labels")
 
-  fig <- plot_ly(dcoord, x = ~Comp1, y = ~Comp2, color =object$Y, colors = c('#636EFA','#EF553B','#00CC96'), type = 'scatter', mode = 'markers')%>%
+  fig <- plot_ly(dcoord, x = ~Comp1, y = ~Comp2, color =object$Y, type = 'scatter', mode = 'markers')%>%
     layout(
       title = "Individu graph",
       legend=list(title=list(text="Individu colors")),
-      plot_bgcolor='#e5ecf6',
       xaxis = list(
         title = paste("Axis 1 (", round(PVE[comp1], 1), "%)", sep = ""),
-        zerolinecolor = "#ffff",
-        zerolinewidth = 2,
-        gridcolor='#ffff'),
+        zerolinecolor = "#black",
+        zerolinewidth = 2),
       yaxis = list(
         title = paste("Axis 2 (", round(PVE[comp2], 1), "%)", sep = ""),
-        zerolinecolor = "#ffff",
-        zerolinewidth = 2,
-        gridcolor='#ffff')
+        zerolinecolor = "#black",
+        zerolinewidth = 2)
     )
   return(fig)
 }
 
+
+plotInd.PlsDA(m)
 

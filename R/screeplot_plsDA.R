@@ -30,6 +30,8 @@ screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 
 
   scaled_df <- apply(object$X, 2, scale)
 
+  scaled_df = scaled_df[,1:object$ncomp]
+
   arrests.cov <- cov(scaled_df)
   arrests.eigen <- eigen(arrests.cov)
 
@@ -40,13 +42,13 @@ screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 
   data.plot<-data.plot %>% group_by(Componants)%>%
     mutate(proportions = scales::percent(PVE, 0.1))
 
-  fig <- plot_ly(data.plot , x = data.plot$Componants, y = data.plot$PVE, type = 'bar', color = NULL)%>%
+  fig <- plot_ly(data.plot , x = data.plot$Componants, y = data.plot$PVE, type = 'bar', color = NULL, name = "")%>%
     layout(
       yaxis = list(
         range=c(0,1), title = 'PVE'
       ), xaxis = list(title = 'Componants'), title = 'Pourcentage variance explain',showlegend = FALSE
     )%>%
-    add_trace(data.plot , x =data.plot$Componants, y = data.plot$PVE, type = 'scatter',  mode = "lm", text =data.plot$proportions, line = list(color = linecolor), marker = list(color = marcker))
+    add_trace(data.plot , x =data.plot$Componants, y = data.plot$PVE, type = 'scatter',  mode = "lm", text =data.plot$proportions, line = list(color = linecolor), marker = list(color = marcker), name = "")
 
 
   return(ggpubr::ggpar(fig))
