@@ -17,20 +17,14 @@
 contribvar.PlsDA = function(object){
 
   #verify if the package is installed
-  res <- require(corrplot)
+  res <- require(heatmaply)
   if (res == FALSE){
-    install.packages("corrplot")
-    res <- require(corplot)
-  }
-
-  res2 <- require(RColorBrewer)
-  if (res2 == FALSE){
-    install.packages("RColorBrewer")
-    res2 <- require(RColorBrewer)
+    install.packages("heatmaply")
+    res <- require(heatmaply)
   }
 
   #verification
-  if (res == FALSE |res2 == FALSE ){
+  if (res == FALSE){
     stop("Impossible to install the package")
   }
 
@@ -49,5 +43,13 @@ contribvar.PlsDA = function(object){
     ctrvar[,k] = ctrvar[,k]/values[k]
   }
 
-  return(corrplot::corrplot(ctrvar,is.corr = F,col=brewer.pal(n=8, name="RdBu")))
+  p  = heatmaply_cor(
+    ctrvar,
+    main = "Contribution variable",
+    k_col = 2,
+    k_row = 2
+  )
+
+
+  return(p)
 }

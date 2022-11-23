@@ -13,23 +13,22 @@
 Cos2.PlsDA = function(object){
 
   #verify if the package is installed
-  res <- require(corrplot)
+  res <- require(heatmaply)
   if (res == FALSE){
-    install.packages("corrplot")
-    res <- require(corplot)
+    install.packages("heatmaply")
+    res <- require(heatmaply)
   }
-
-  res2 <- require(RColorBrewer)
-  if (res2 == FALSE){
-    install.packages("RColorBrewer")
-    res2 <- require(RColorBrewer)
-  }
-
-
 
   #call function var.coord
   var.coord = var.coord(object)
   cos2 = var.coord**2
 
-  return(corrplot::corrplot(cos2,is.corr = F,col=brewer.pal(n=8, name="RdBu")))
+  p  = heatmaply_cor(
+    cos2,
+    main = "Representation quality of variables",
+    k_col = 2,
+    k_row = 2
+  )
+
+  return(p)
 }

@@ -16,10 +16,10 @@
 #'
 correlationplot_plsDA <- function(object,usedcomp=1){
   #verify if the package is installed
-  res <- require(corrplot)
+  res <- require(heatmaply)
   if (res == FALSE){
-    install.packages("corrplot")
-    res <- require(corplot)
+    install.packages("heatmaply")
+    res <- require(heatmaply)
   }
   #verification
   if (res == FALSE){
@@ -34,7 +34,14 @@ correlationplot_plsDA <- function(object,usedcomp=1){
   {
     #sort variables based on correlation with the component selected
     ordre <- order(object$calc$Loadings_X[,usedcomp])
-    #correlation plot
-    corrplot::corrplot(cor(object$X[ordre]))
+
+    heatmaply_cor(
+      cor(m$X[ordre]),
+      main = paste("Correlation matrix between the ",usedcomp," composant and others",sep = ""),
+      k_col = 2,
+      k_row = 2
+    )
   }
 } #end of correlationplot.plsDA function
+
+
