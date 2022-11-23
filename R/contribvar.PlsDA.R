@@ -53,3 +53,4 @@ contribvar.PlsDA = function(object){
 
   return(p)
 }
+

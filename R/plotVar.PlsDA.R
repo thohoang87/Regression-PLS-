@@ -41,7 +41,8 @@ plotVar.PlsDA = function(object, comp1 = 1, comp2 = 2){
     title = "Correlation circle",
     xaxis = list(title = paste("Axis 1 (", round(PVE[comp1], 1), "%)", sep = "")),
     yaxis = list(title = paste("Axis 2 (", round(PVE[comp2], 1), "%)", sep = "")),
-    width = 600,
+    width = 700,
+    height = 300,
     shapes = list(
       list(
         x0 = -1,
@@ -61,4 +62,3 @@ plotVar.PlsDA = function(object, comp1 = 1, comp2 = 2){
 
   return(p)
 }
-
