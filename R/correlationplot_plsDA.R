@@ -36,7 +36,7 @@ correlationplot_plsDA <- function(object,usedcomp=1){
     ordre <- order(object$calc$Loadings_X[,usedcomp])
 
     heatmaply_cor(
-      cor(m$X[ordre]),
+      cor(object$X[ordre]),
       main = paste("Correlation matrix between the ",usedcomp," composant and others",sep = ""),
       k_col = 2,
       k_row = 2
