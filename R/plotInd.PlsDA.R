@@ -50,7 +50,3 @@ plotInd.PlsDA = function(object, comp1 = 1, comp2 = 2){
     )
   return(fig)
 }
-
-
-plotInd.PlsDA(m)
-
