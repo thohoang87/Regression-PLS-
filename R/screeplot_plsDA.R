@@ -30,10 +30,12 @@ screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 
 
   scaled_df <- apply(object$X, 2, scale)
 
-  scaled_df = scaled_df[,1:object$ncomp]
+  scaled_df = scaled_df[,1:object$n_components]
 
   arrests.cov <- cov(scaled_df)
   arrests.eigen <- eigen(arrests.cov)
+  bool = arrests.eigen$values > 1 #kaiser criteria
+  compColor = ifelse(bool, "rgba( 240, 128, 128, 1 )","rgba( 173, 216, 230, 1 )")
 
   PVE <- round(arrests.eigen$values / sum(arrests.eigen$values),2)
   data.plot <- cbind.data.frame(c(1:object$n_components), PVE)
@@ -42,7 +44,7 @@ screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 
   data.plot<-data.plot %>% group_by(Componants)%>%
     mutate(proportions = scales::percent(PVE, 0.1))
 
-  fig <- plot_ly(data.plot , x = data.plot$Componants, y = data.plot$PVE, type = 'bar', color = NULL, name = "")%>%
+  fig <- plot_ly(data.plot , x = data.plot$Componants, y = data.plot$PVE, type = 'bar', color = I(compColor), name = "")%>%
     layout(
       yaxis = list(
         range=c(0,1), title = 'PVE'
@@ -53,3 +55,4 @@ screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 
 
   return(ggpubr::ggpar(fig))
 }
+
