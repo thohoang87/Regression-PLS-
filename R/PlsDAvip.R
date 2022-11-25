@@ -57,13 +57,13 @@ PlsDA.vip = function(X,Y,ncomp,threshold = 1,algorithm="simpls" ){
   rownames(vip)=colnames(X)
   colnames(vip)=paste("Dim.",1:ncomp,sep="")
   #détermination des variables importantes
-  variable_importante=rownames(vip)[which(vip[,ncomp]>threshold)]
+  variable_importante=rownames(vip)[which(vip[,1]>threshold)]
 
 
 
   # Si une seule variable importante, on sélectionne les 2 variables avec le plus haut VIP
   if (length(variable_importante)<2){
-    vip_sorted = vip[order(-vip[,ncomp]),]
+    vip_sorted = vip[order(-vip[,1]),]
     variable_importante=rownames(vip_sorted)[1:2]
   }
   # Création d'un nouveau dataset avec uniquement les variables importantes
