@@ -35,7 +35,7 @@ plotVar.PlsDA = function(object, comp1 = 1, comp2 = 2){
 
   var.coord = var.coord(object)
 
-  d  = cbind(var.coord[,1],var.coord[,2])
+  d  = cbind(var.coord[,comp1],var.coord[,comp2])
 
   layout <- list(
     title = "Correlation circle",

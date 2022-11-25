@@ -34,3 +34,4 @@ var.coord = function(object){
   colnames(var.coord) = nom
   return(var.coord)
   }
+
