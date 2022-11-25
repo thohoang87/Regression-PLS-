@@ -13,18 +13,26 @@
 #' vip = PlsDA.vip(X,Y,2)
 #' plot.vip(vip)
 #'
+#'
+#'
 plot.vip<-function(ObjectVIP){
 
   vip_sorted = ObjectVIP$vip[order(-ObjectVIP$vip[,ObjectVIP$ncomp]),]
 
-  bp=barplot(vip_sorted[,ObjectVIP$ncomp],names.arg=rownames(ObjectVIP$vip))
-  pas=0.5
-  for (i in 1:length(ObjectVIP$vip[,ObjectVIP$ncomp])){
-    if (vip_sorted[i,ObjectVIP$ncomp]>=ObjectVIP$threshold){
-      rect(bp[i]-pas,0,bp[i]+pas,sort(ObjectVIP$vip[,ObjectVIP$ncomp],decreasing=T)[i],col="blue")
-    }else{
-      rect(bp[i]-pas,0,bp[i]+pas,sort(ObjectVIP$vip[,ObjectVIP$ncomp],decreasing=T)[i],col="red")
-    }
-  }
-  abline(h=ObjectVIP$threshold,col="red")
+
+  bool = vip_sorted[,1]>=ObjectVIP$threshold
+  compColor = ifelse(bool, "rgba( 240, 128, 128, 1 )","rgba( 173, 216, 230, 1 )")
+
+  library(plotly)
+
+  fig <- plot_ly(x = rownames(vip_sorted),y = vip_sorted[,1],name = "test",color = I(compColor),type = "bar")%>%
+    layout(
+      xaxis=list(title = 'Variables'),
+      yaxis=list(title="VIP"),
+      title="Variable selection with VIP",
+      showlegend=F
+        )%>%
+    add_lines(y=ObjectVIP$threshold,color = I("rgba(0,0,0, 1 )"))
+
+  return(fig)
 }
