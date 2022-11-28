@@ -117,4 +117,3 @@ fit = function(formula, data, ncomp=NULL, algorithm="simpls",var.select = F,thre
 
 }
 
-
