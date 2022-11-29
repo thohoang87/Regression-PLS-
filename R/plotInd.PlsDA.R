@@ -37,6 +37,7 @@ plotInd.PlsDA = function(object, comp1 = 1, comp2 = 2){
 
   fig <- plot_ly(dcoord, x = ~dcoord[,comp1], y = ~dcoord[,comp2], color =object$Y, type = 'scatter', mode = 'markers')%>%
     layout(
+      autosize = T,
       title = "Individu graph",
       legend=list(title=list(text="Individu colors")),
       xaxis = list(

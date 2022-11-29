@@ -56,7 +56,7 @@ plotVar.PlsDA = function(object, comp1 = 1, comp2 = 2){
   p <- plot_ly()
 
   p <- add_trace(p,type = 'scatter', mode="markers",name = rownames(object$calc$Loadings_X),type = 'scatter', x=var.coord[,comp1], y=var.coord[,comp2])
-  p <- layout(p, title=layout$title, width=layout$width, xaxis=layout$xaxis, yaxis=layout$yaxis, shapes=layout$shapes)
+  p <- layout(p,autosize = T, title=layout$title, width=layout$width, xaxis=layout$xaxis, yaxis=layout$yaxis, shapes=layout$shapes)
 
 
 
