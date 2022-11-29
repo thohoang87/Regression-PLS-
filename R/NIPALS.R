@@ -147,7 +147,8 @@ NIPALS <- function(X,Y, ncomp = NULL, threshold = 0.001, iter.max = 100){
     # intercept
     intercept <- as.vector(apply(Y,2,mean) - apply(X,2,mean) %*%Br)
   }
-
+classification <- rbind(Br,intercept)
+  
   if (q==1){
     rownames(Y) <- rownames(X)
     rownames(res_u) <- rownames(X)
@@ -160,6 +161,7 @@ NIPALS <- function(X,Y, ncomp = NULL, threshold = 0.001, iter.max = 100){
 
   return(list(X=X,
               Y=Y,
+              classification = classification,
               n_components=ncomp,
               Coefficients=Br,
               Intercept=intercept,
