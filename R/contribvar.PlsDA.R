@@ -33,10 +33,10 @@ contribvar.PlsDA = function(object){
   arrests.cov <- cor(object$X)
   arrests.eigen <- eigen(arrests.cov)
 
-  values = as.matrix(arrests.eigen$values)
+  values = as.matrix(arrests.eigen$values) #eigen values
 
 
-  var.coord = var.coord(object)
+  var.coord = var.coord(object) #coordonates
   ctrvar = var.coord**2
 
   for (k in 1:object$n_components){

@@ -7,7 +7,7 @@
 #' @param marcker : color point line
 #'
 #' @return
-#' PVEplot : a screeplot to determinded the number of componants with the criteria of elbow method
+#' PVEplot : a screeplot to determinded the number of components with the criteria of elbow method
 #' @export
 #'
 #' @examples
@@ -37,20 +37,21 @@ screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 
   bool = arrests.eigen$values > 1 #kaiser criteria
   compColor = ifelse(bool, "rgba( 240, 128, 128, 1 )","rgba( 173, 216, 230, 1 )")
 
-  PVE <- round(arrests.eigen$values / sum(arrests.eigen$values),2)
+  PVE <- round(arrests.eigen$values / sum(arrests.eigen$values),2) #variance explain
   data.plot <- cbind.data.frame(c(1:object$n_components), PVE)
-  colnames(data.plot) <- c("Componants","PVE")
+  colnames(data.plot) <- c("Components","PVE")
 
-  data.plot<-data.plot %>% group_by(Componants)%>%
+  #data plor with variance explain
+  data.plot<-data.plot %>% group_by(Components)%>%
     mutate(proportions = scales::percent(PVE, 0.1))
-
-  fig <- plot_ly(data.plot , x = data.plot$Componants, y = data.plot$PVE, type = 'bar', color = I(compColor), name = "")%>%
+  #create plot
+  fig <- plot_ly(data.plot , x = data.plot$Components, y = data.plot$PVE, type = 'bar', color = I(compColor), name = "")%>%
     layout(
       yaxis = list(
         range=c(0,1), title = 'PVE'
-      ), xaxis = list(title = 'Componants'), title = 'Pourcentage variance explain',showlegend = FALSE
+      ), xaxis = list(title = 'Components'), title = 'Pourcentage variance explain',showlegend = FALSE
     )%>%
-    add_trace(data.plot , x =data.plot$Componants, y = data.plot$PVE, type = 'scatter',  mode = "lm", text =data.plot$proportions, line = list(color = linecolor), marker = list(color = marcker), name = "")
+    add_trace(data.plot , x =data.plot$Components, y = data.plot$PVE, type = 'scatter',  mode = "lm", text =data.plot$proportions, line = list(color = linecolor), marker = list(color = marcker), name = "")
 
 
   return(ggpubr::ggpar(fig))

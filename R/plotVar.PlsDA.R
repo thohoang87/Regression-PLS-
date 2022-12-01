@@ -31,9 +31,9 @@ plotVar.PlsDA = function(object, comp1 = 1, comp2 = 2){
   arrests.cov <- cov(scaled_df)
   arrests.eigen <- eigen(arrests.cov)
 
-  PVE <- round(arrests.eigen$values / sum(arrests.eigen$values),2) *100
+  PVE <- round(arrests.eigen$values / sum(arrests.eigen$values),2) *100 #pourcentage variance explain
 
-  var.coord = var.coord(object)
+  var.coord = var.coord(object) #coordonate variables
 
   d  = cbind(var.coord[,comp1],var.coord[,comp2])
 

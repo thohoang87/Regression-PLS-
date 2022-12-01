@@ -29,12 +29,13 @@ plotInd.PlsDA = function(object, comp1 = 1, comp2 = 2){
   arrests.cov <- cov(scaled_df)
   arrests.eigen <- eigen(arrests.cov)
   PVE <- arrests.eigen$values / sum(arrests.eigen$values)
-  PVE = PVE * 100
+  PVE = PVE * 100 #variance explain
 
   dcoord = as.data.frame(object$calc$Scores_X)
   dcoord = cbind(dcoord,object$Y)
   colnames(dcoord) = c(paste("Comp",1:object$n_components,sep = ""),"labels")
 
+  #individu graph
   fig <- plot_ly(dcoord, x = ~dcoord[,comp1], y = ~dcoord[,comp2], color =object$Y, type = 'scatter', mode = 'markers')%>%
     layout(
       autosize = T,

@@ -23,8 +23,8 @@ get_dummies = function(d){
   if (res == FALSE){
     stop("Impossible to install the package")
   }
-  d = as.factor(d)
-  d_dummies = fastDummies::dummy_cols(d)
+  d = as.factor(d) #transform into factor
+  d_dummies = fastDummies::dummy_cols(d) #call fastdummies package
   d_dummies = d_dummies[,-1]
   colnames(d_dummies) = levels(d)
 

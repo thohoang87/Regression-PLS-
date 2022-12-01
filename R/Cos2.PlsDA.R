@@ -21,7 +21,7 @@ Cos2.PlsDA = function(object){
 
   #call function var.coord
   var.coord = var.coord(object)
-  cos2 = var.coord**2
+  cos2 = var.coord**2 #quality representation on the axis
 
   p  = heatmaply_cor(
     cos2,
