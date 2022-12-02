@@ -49,7 +49,7 @@ screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 
     layout(
       yaxis = list(
         range=c(0,1), title = 'PVE'
-      ), xaxis = list(title = 'Components'), title = 'Pourcentage variance explain',showlegend = FALSE
+      ), xaxis = list(title = 'Components'), title = 'Screeplot',showlegend = FALSE
     )%>%
     add_trace(data.plot , x =data.plot$Components, y = data.plot$PVE, type = 'scatter',  mode = "lm", text =data.plot$proportions, line = list(color = linecolor), marker = list(color = marcker), name = "")
 

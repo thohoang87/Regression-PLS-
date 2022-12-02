@@ -38,7 +38,7 @@ plotVar.PlsDA = function(object, comp1 = 1, comp2 = 2){
   d  = cbind(var.coord[,comp1],var.coord[,comp2])
 
   layout <- list(
-    title = "Correlation circle",
+    title = "Correlation circle variables",
     xaxis = list(title = paste("Axis 1 (", round(PVE[comp1], 1), "%)", sep = "")),
     yaxis = list(title = paste("Axis 2 (", round(PVE[comp2], 1), "%)", sep = "")),
     width = 600,
