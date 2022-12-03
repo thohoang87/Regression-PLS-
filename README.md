@@ -6,3 +6,6 @@ The goal of the project is to create a package reproducing different outputs usi
 
 URL Rshiny app :
 https://ha8g60-samibgh.shinyapps.io/App_PLS_Regression/
+
+URL upload file for shiny app : 
+
