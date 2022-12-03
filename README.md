@@ -15,13 +15,15 @@ We have create this package in order to practice our programming skills and also
 
 In order to use our package, you could install it from our Github.
 
+```
 library(devtools)
 install_github("Samibgh/Regression-PLS-")
-
+```
 Once the package is downloaded and successfully installed, please load it for use.
 
+```
 library(PlsRegression)
-
+```
 ## Dataset Description
 
 In order to test our package, we work with the dataset breast_train_test.xlsx. It consists of 400 observations and 10 variables.
