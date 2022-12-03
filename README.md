@@ -1,4 +1,13 @@
 # Regression-PLS-DA-
+
+URL Rshiny app :
+[RshinyApp](https://ha8g60-samibgh.shinyapps.io/App_PLS_Regression/)
+
+URL upload file for shiny app : 
+[Upload files](https://github.com/Samibgh/R-Shiny---PLS-DA-Deployment)
+
+The contributors of this package : Loic SPICA, Tho Hang, Samuel Ibghi
+
 ## Introduction
 
 The goal of the project is to create a package reproducing different outputs using PLS Regression, and to display them using a Rshiny application. The PLS Regression is a prediction method in machine learning which was born in 1980 and which knows today many applications in extremely varied domains. She maximizes the variance of the predictors of Xi and maximizes the correlation between the variables that explain the variable Y. The algorithm borrows its approach from both principal component analysis (PCA) and linear regression. More precisely, it looks for the components called latent variables in order to express the regression of Y on the feature variables. 
@@ -85,6 +94,8 @@ This graph show the correlation between variables and the representation the axi
 
 This graph show the differents coordonates of individu on the graph and show the similarities between individu. When we execute the graph we see the class of individu with the variable Y.
 
+![image](https://user-images.githubusercontent.com/78345903/205448732-326265dc-d1bd-4850-bc36-cf3130a4679b.png)
+
 ### Contributions variables 
 
 This matrix show the contribution between variables. 
@@ -113,11 +124,7 @@ For exemple, here we select only the variables where the bar is red.
 
 ## Conclusion 
 
+The PLS Regression method is a method not often used by Data Scientist but she is full of interest. In fact, we have different possibility to calcul the result : Canonical, SIMPLS, Nipals. Aslo with have the PLS-DA regression who is amazing for her utilisation. Indeed we can use the graph of PCA for data vizualisation. 
+The PLS Regression only work with quantitatve variable cible Y and can work with multiple variable cible Y. 
+To build this package, we have based ourselves on many documentacions and also the code source of Sklearn for the PLS Regression. 
 
-URL Rshiny app :
-[RshinyApp](https://ha8g60-samibgh.shinyapps.io/App_PLS_Regression/)
-
-URL upload file for shiny app : 
-[Upload files](https://github.com/Samibgh/R-Shiny---PLS-DA-Deployment)
-
-The contributors of this package : Loic SPICA, Tho Hang, Samuel Ibghi
