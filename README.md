@@ -8,4 +8,4 @@ URL Rshiny app :
 https://ha8g60-samibgh.shinyapps.io/App_PLS_Regression/
 
 URL upload file for shiny app : 
-
+https://github.com/Samibgh/R-Shiny---PLS-DA-Deployment
