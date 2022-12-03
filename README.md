@@ -143,7 +143,7 @@ To build this package, we have based ourselves on many documentacions and also t
 
 After creating the package, we built an R-shiny application to deploy this package. 
 
-Our package is now available on shinyapps.io, you can use it for free [here](https://ha8g60-samibgh.shinyapps.io/App_PLS_Regression/).
+Our application is now available on shinyapps.io, you can use it for free [here](https://ha8g60-samibgh.shinyapps.io/App_PLS_Regression/).
 
 ## Application Interface:
 
