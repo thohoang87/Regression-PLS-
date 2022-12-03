@@ -19,6 +19,7 @@ The dataset contains 2 sheets : apprentissage (for training model) and test (for
 ## View Data 
 
 View of data : 
+
 ![image](https://user-images.githubusercontent.com/78345903/205445292-895ca089-8888-4e1b-8076-adedecd43a87.png)
 
 ## FIT function 
@@ -28,13 +29,16 @@ In the function, we have many parameters to choose for launch function. This is 
 ![image](https://user-images.githubusercontent.com/78345903/205444751-e0e59ab5-f25c-4306-a322-c0ab2c8865fa.png)
 
 SO we can call our function like the this : 
+
 ![image](https://user-images.githubusercontent.com/78345903/205445418-c52fc3d0-0da7-4802-8140-462ca4a20e30.png)
 
 After the execution of function we have a object pls_model and an instance of class PLSDA is created.She contain different result of pls regresion. For exemple we can show the result of classification report :
 Like this : 
+
 ![image](https://user-images.githubusercontent.com/78345903/205445588-d4d5583f-fdda-46ff-9bf1-9de41b09b389.png)
 
 The result : 
+
 ![image](https://user-images.githubusercontent.com/78345903/205445611-656922cd-87ff-4e10-b6c3-d0c87fd03d68.png)
 
 From the class PLSDA, we can call the fuction summary and print. they were surcharged by the class PLSDA. 
