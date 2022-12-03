@@ -16,10 +16,48 @@ Attribute information:
   
 The dataset contains 2 sheets : apprentissage (for training model) and test (for prediction).
 
+## View Data 
+
+View of data : 
+![image](https://user-images.githubusercontent.com/78345903/205445292-895ca089-8888-4e1b-8076-adedecd43a87.png)
+
 ## FIT function 
+
+In the function, we have many parameters to choose for launch function. This is a picture of the different parameters. You can choose between the Nipals algorithm and the Simpls algorithm. Choose if you want a selection variable and you number of composant.
 
 ![image](https://user-images.githubusercontent.com/78345903/205444751-e0e59ab5-f25c-4306-a322-c0ab2c8865fa.png)
 
+SO we can call our function like the this : 
+![image](https://user-images.githubusercontent.com/78345903/205445418-c52fc3d0-0da7-4802-8140-462ca4a20e30.png)
+
+After the execution of function we have a object pls_model and an instance of class PLSDA is created.She contain different result of pls regresion. For exemple we can show the result of classification report :
+Like this : 
+![image](https://user-images.githubusercontent.com/78345903/205445588-d4d5583f-fdda-46ff-9bf1-9de41b09b389.png)
+
+The result : 
+![image](https://user-images.githubusercontent.com/78345903/205445611-656922cd-87ff-4e10-b6c3-d0c87fd03d68.png)
+
+From the class PLSDA, we can call the fuction summary and print. they were surcharged by the class PLSDA. 
+
+![image](https://user-images.githubusercontent.com/78345903/205445789-1406b92c-79ba-4499-85bc-a2d0b83cae86.png)
+
+## Predict function 
+
+In the function, we have tree parameters to choose for launch function. This is a picture of the different parameters. You can choose between the type posterior or class, if you want the class of prediction or the probabilties.
+
+![image](https://user-images.githubusercontent.com/78345903/205446134-2f32621d-e955-46f0-b51d-7d158b5461ad.png)
+
+We can call our function like this : 
+
+![image](https://user-images.githubusercontent.com/78345903/205446172-4f7023dc-cb67-4ba9-aa31-50dbb3b03fa1.png)
+
+After the execution, we have the different class assigned to predict the Y variable. This is a part of prediction : 
+
+![image](https://user-images.githubusercontent.com/78345903/205446321-126ea6d1-75eb-4dfc-8301-2316fea298d6.png)
+
+## Graphics 
+
+PLS-DA regression have the same mode of vizualisation data like a PCA. So we will show you the different type of graphs. 
 
 
 
