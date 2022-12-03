@@ -111,8 +111,6 @@ This graph show the variables selection on the graph.
 
 For exemple, here we select only the variables where the bar is red. 
 
-![image](https://user-images.githubusercontent.com/78345903/205448315-83869cd9-313d-4152-ac56-6324c9a37c3a.png)
-
 ## Conclusion 
 
 
