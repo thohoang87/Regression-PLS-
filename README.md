@@ -85,6 +85,35 @@ This graph show the correlation between variables and the representation the axi
 
 This graph show the differents coordonates of individu on the graph and show the similarities between individu. When we execute the graph we see the class of individu with the variable Y.
 
+### Contributions variables 
+
+This matrix show the contribution between variables. 
+
+![image](https://user-images.githubusercontent.com/78345903/205447896-b41e1988-3c20-46e8-ad52-8b1e3772cd34.png)
+
+### Cos2 graph 
+
+This graph show the quality representation of variables on the different axis. 
+
+![image](https://user-images.githubusercontent.com/78345903/205448025-d87cbffa-a64d-418f-bfe5-94e0ea0ed1d4.png)
+
+### Correlation variables 
+
+This graph show the correlation between variables.
+
+![image](https://user-images.githubusercontent.com/78345903/205448161-36746bf6-7274-4f10-be49-76e2c85c540f.png)
+
+### Plot VIP 
+
+This graph show the variables selection on the graph. 
+
+![image](https://user-images.githubusercontent.com/78345903/205448258-b9a0eb21-d5b0-49f6-89ca-3364d310409a.png)
+
+For exemple, here we select only the variables where the bar is red. 
+
+![image](https://user-images.githubusercontent.com/78345903/205448315-83869cd9-313d-4152-ac56-6324c9a37c3a.png)
+
+## Conclusion 
 
 
 URL Rshiny app :
