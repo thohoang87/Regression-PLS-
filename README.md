@@ -126,7 +126,9 @@ The PLS Regression method is a method not often used by Data Scientist but she i
 The PLS Regression only work with quantitatve variable cible Y and can work with multiple variable cible Y. 
 To build this package, we have based ourselves on many documentacions and also the code source of Sklearn for the PLS Regression. 
 
-# After creating the package, we built an R-shiny application to deploy this package. 
+# Rshiny tutorial :
+
+After creating the package, we built an R-shiny application to deploy this package. 
 
 Our package is now available on shinyapps.io, you can use it for free [here](https://ha8g60-samibgh.shinyapps.io/App_PLS_Regression/).
 
