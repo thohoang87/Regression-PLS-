@@ -33,6 +33,7 @@ SO we can call our function like the this :
 ![image](https://user-images.githubusercontent.com/78345903/205445418-c52fc3d0-0da7-4802-8140-462ca4a20e30.png)
 
 After the execution of function we have a object pls_model and an instance of class PLSDA is created.She contain different result of pls regresion. For exemple we can show the result of classification report :
+
 Like this : 
 
 ![image](https://user-images.githubusercontent.com/78345903/205445588-d4d5583f-fdda-46ff-9bf1-9de41b09b389.png)
@@ -44,6 +45,11 @@ The result :
 From the class PLSDA, we can call the fuction summary and print. they were surcharged by the class PLSDA. 
 
 ![image](https://user-images.githubusercontent.com/78345903/205445789-1406b92c-79ba-4499-85bc-a2d0b83cae86.png)
+
+We have also in the object pls_model, the variable selected by the VIP algorithm. it's select the important variable for the best model for predict Y variable. : 
+
+![image](https://user-images.githubusercontent.com/78345903/205446795-b81659d1-fd9c-49cb-bbaf-1593011a060f.png)
+
 
 ## Predict function 
 
@@ -62,6 +68,22 @@ After the execution, we have the different class assigned to predict the Y varia
 ## Graphics 
 
 PLS-DA regression have the same mode of vizualisation data like a PCA. So we will show you the different type of graphs. 
+
+### Screeplot 
+ 
+This graphics show the number of components to select with criteria of below and kaiser. 
+
+![image](https://user-images.githubusercontent.com/78345903/205446861-e4680567-087a-4ab2-a577-8ac461765228.png)
+
+### Correlation circle variables 
+
+This graph show the correlation between variables and the representation the axis. We can determine many fact with this graph. 
+
+![image](https://user-images.githubusercontent.com/78345903/205446990-7d50eaf4-1d43-4e75-bd3a-cf6599dca41b.png)
+
+### Individu plot 
+
+This graph show the differents coordonates of individu on the graph and show the similarities between individu. When we execute the graph we see the class of individu with the variable Y.
 
 
 
