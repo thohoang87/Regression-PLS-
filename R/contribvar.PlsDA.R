@@ -16,18 +16,6 @@
 #'
 contribvar.PlsDA = function(object){
 
-  #verify if the package is installed
-  res <- require(heatmaply)
-  if (res == FALSE){
-    install.packages("heatmaply")
-    res <- require(heatmaply)
-  }
-
-  #verification
-  if (res == FALSE){
-    stop("Impossible to install the package")
-  }
-
   scaled_df <- apply(object$X, 2, scale)
 
   arrests.cov <- cor(object$X)

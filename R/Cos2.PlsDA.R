@@ -12,13 +12,6 @@
 #' Cos2.PlsDA(fit_launch)
 Cos2.PlsDA = function(object){
 
-  #verify if the package is installed
-  res <- require(heatmaply)
-  if (res == FALSE){
-    install.packages("heatmaply")
-    res <- require(heatmaply)
-  }
-
   #call function var.coord
   var.coord = var.coord(object)
   cos2 = var.coord**2 #quality representation on the axis

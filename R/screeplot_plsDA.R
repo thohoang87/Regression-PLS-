@@ -16,11 +16,10 @@
 #'
 screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 'black'){
   #verify if the package is installed
-  res <- require(plotly) && require(ggpubr)
+  res <- require(plotly)
   if (res == FALSE){
     install.packages("plotly")
-    install.packages("ggpubr")
-    res <- require(plotly) && require(ggpubr)
+    res <- require(plotly)
   }
   #verification
   if (res == FALSE){
@@ -54,6 +53,6 @@ screeplot_plsDA = function(object,colorbar = NULL,linecolor = "black",marcker = 
     add_trace(data.plot , x =data.plot$Components, y = data.plot$PVE, type = 'scatter',  mode = "lm", text =data.plot$proportions, line = list(color = linecolor), marker = list(color = marcker), name = "")
 
 
-  return(ggpubr::ggpar(fig))
+  return(fig)
 }
 

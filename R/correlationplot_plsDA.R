@@ -15,21 +15,16 @@
 #' correlationplot_plsDA(fit_launch, usedcomp=1)
 #'
 correlationplot_plsDA <- function(object,usedcomp=1){
-  #verify if the package is installed
-  res <- require(heatmaply)
-  if (res == FALSE){
-    install.packages("heatmaply")
-    res <- require(heatmaply)
-  }
-  #verification
-  if (res == FALSE){
-    stop("Impossible to install the package")
-  }
 
   #verify the component selected
   if (is.null(usedcomp) || usedcomp < 1 || usedcomp >ncol(object$calc$x_weights)){
     #correlation standard
-    corrplot::corrplot(cor(object$X))
+    heatmaply_cor(
+      cor(object$X),
+      main = paste("Correlation matrix",sep = ""),
+      k_col = 2,
+      k_row = 2
+    )
   } else
   {
     #sort variables based on correlation with the component selected
