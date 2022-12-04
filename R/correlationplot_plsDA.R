@@ -16,12 +16,6 @@
 #'
 correlationplot_plsDA <- function(object,usedcomp=1){
 
-  res <- require(heatmaply)
-  if (res == FALSE){
-    install.packages("heatmaply")
-    res <- require(heatmaply)
-  }
-
   #verify the component selected
   if (is.null(usedcomp) || usedcomp < 1 || usedcomp >ncol(object$calc$x_weights)){
     #correlation standard
