@@ -25,7 +25,7 @@ Once the package is downloaded and successfully installed, please load it for us
 library(PlsRegression)
 ```
 
-In order to have a great experience with our package, make sur that you have already installed these packages :
+In order to have a great experience with our package, make sure that you have already installed these packages :
 ```
 library(plotly)
 library(heatmaply)
