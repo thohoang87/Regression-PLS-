@@ -24,6 +24,12 @@ Once the package is downloaded and successfully installed, please load it for us
 ```
 library(PlsRegression)
 ```
+
+In order to have a great experience with our package, make sur that you have already installed these packages :
+```
+library(plotly)
+library(heatmaply)
+```
 ## Dataset Description
 
 In order to test our package, we work with the dataset breast_train_test.xlsx. It consists of 400 observations and 10 variables.
