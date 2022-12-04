@@ -12,24 +12,16 @@
 #' y = iris[,5]
 #' y = get_dummies(y)
 #' print(y)
-get_dummies = function(d){
-  #verify if the package is installed
-  res <- require(fastDummies)
-  if (res == FALSE){
-    install.packages("fastDummies")
-    res <- require(fastDummies)
-  }
-  #verification
-  if (res == FALSE){
-    stop("Impossible to install the package")
-  }
-  d = as.factor(d) #transform into factor
-  d_dummies = fastDummies::dummy_cols(d) #call fastdummies package
-  d_dummies = d_dummies[,-1]
-  colnames(d_dummies) = levels(d)
+get_dummies = function(y){
+    y <- as.factor(y) #transform into factor
+    m <- matrix(data=NA,length(y),nlevels(y))
+    for (i in (1:length(y))){
+      for (j in (1:nlevels(y))){
+        m[i,j] <- ifelse(y[i]==levels(y)[j],1,0)
+      }
+    }
+    colnames(m)<-levels(y)
+    m = as.data.frame(m)
 
-  return(d_dummies)
+    return(m)
 }
-
-
-
